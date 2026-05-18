@@ -21,10 +21,10 @@ def get_files_info(working_directory, directory="."):
         for directory in directory_contents:
           full_path = os.path.join(target_dir, directory)
           directory_strings.append(f"- {directory}:  file_size={os.path.getsize(full_path)} bytes, is_dir={os.path.isdir(full_path)}")
-      except:
-        return "Error: failed to fet path size or validate diretory"
+      except Exception as e:
+        return f'Error fetch file size or validate if "{directory}" is a directory: {e}'
       directory_details = "\n".join(directory_strings)
       print(f"Result for current directory:\n{directory_details}")
-  except:
-    return f'Error: The standard library functionality failed and returned an error.'
+  except Exception as e:
+        return f'Error getting file "{directory}": {e}'
   
