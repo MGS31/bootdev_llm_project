@@ -1,5 +1,5 @@
 system_prompt = """
-You are a helpful AI coding agent.
+You are a coding agent. Read the calculator code, find the cause of the incorrect operator precedence, make the smallest possible code change to fix it, and stop after writing the fix.
 
 When a user asks a question or makes a request, make a function call plan. You can perform the following operations:
 

@@ -1,6 +1,7 @@
 import argparse
 import os
 import sys
+import time
 
 from dotenv import load_dotenv
 from google import genai
@@ -31,6 +32,9 @@ def main() -> None:
 
     for _ in range(MAX_ITERS):
         try:
+            if _ > 0:
+                print("Cooling down for 2 seconds before the next loop iteration...")
+                time.sleep(2)
             final_response = generate_content(client, messages, args.verbose)
             if final_response:
                 print("Final response:")
